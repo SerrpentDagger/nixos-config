@@ -6,9 +6,9 @@ let
 in {
   options = {
     userSettings.editor = lib.mkOption {
-      default = "vscodium";
+      default = "emacs;
       description = "Default editor";
-      type = lib.types.enum [ "emacs" "kate" "vscodium" "zed"];
+      type = lib.types.enum [ "emacs" "kate" ]; # removed "vscodium" and "zed" and hardcoded to false below.
       # TODO add more editors
       #type = lib.types.enum [ "emacs" "vim" "nvim" "neovide" "nano" "micro" "vscodium" "kate" "pulsar" ];
     };
@@ -19,9 +19,9 @@ in {
   };
 
   config = {
-    userSettings.zed.enable = lib.mkIf (config.userSettings.editor == "zed") true;
+    userSettings.zed.enable = false; # lib.mkIf (config.userSettings.editor == "zed") true;
     userSettings.emacs.enable = lib.mkIf (config.userSettings.editor == "emacs") true;
-    userSettings.vscodium.enable = lib.mkIf (config.userSettings.editor == "vscodium") true;
+    userSettings.vscodium.enable = false; # lib.mkIf (config.userSettings.editor == "vscodium") true;
     home.packages = with pkgs;
       lib.optionals (editor == "kate") [ kdePackages.kate];
     userSettings.spawnEditor = lib.mkMerge [

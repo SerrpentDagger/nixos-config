@@ -9,7 +9,7 @@ in {
     };
   };
 
-  config = lib.mkIf cfg.enable {
+  config = lib.mkIf false # TODO configure cfg.enable {
     home.packages = with pkgs; [
       shared-mime-info
       kdePackages.dolphin
@@ -24,7 +24,6 @@ in {
       zulip
       discord
       openvpn
-      pomodoro-gtk
     ];
     services.syncthing.enable = true;
     services.nextcloud-client = {

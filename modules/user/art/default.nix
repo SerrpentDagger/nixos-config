@@ -17,7 +17,7 @@ in {
       libresprite
       upscayl
       material-maker
-      google-fonts
+#      google-fonts
       fontforge-gtk
     ];
     userSettings.blender.enable = true;

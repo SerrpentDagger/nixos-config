@@ -24,8 +24,8 @@
       pkgs = import nixpkgs-patched {
         inherit system;
         config = {
-          allowUnfree = true;
-          allowUnfreePredicate = (_: true);
+          allowUnfree = false;
+#          allowUnfreePredicate = (_: true);
         };
         overlays = [ inputs.rust-overlay.overlays.default inputs.emacs-overlay.overlays.default inputs.chaotic.overlays.default ];
       };
@@ -33,8 +33,8 @@
       pkgs-stable = import inputs.nixpkgs-stable {
         inherit system;
         config = {
-          allowUnfree = true;
-          allowUnfreePredicate = (_: true);
+          allowUnfree = false;
+#          allowUnfreePredicate = (_: true);
         };
       };
 

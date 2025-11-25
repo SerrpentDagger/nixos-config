@@ -9,7 +9,7 @@ in {
     };
   };
 
-  config = lib.mkIf cfg.enable {
+  config = lib.mkIf false # cfg.enable {
     home.packages = with pkgs; [
       remmina
       sshfs
