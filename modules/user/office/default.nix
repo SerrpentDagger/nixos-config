@@ -9,27 +9,23 @@ in {
     };
   };
 
-  config = lib.mkIf false # TODO configure cfg.enable {
+  config = lib.mkIf cfg.enable {
     home.packages = with pkgs; [
       shared-mime-info
       kdePackages.dolphin
-      libreoffice-still
+      libreoffice-fresh
       mate.atril
-      xournalpp
+#      xournalpp
       adwaita-icon-theme
-      foliate
+#      foliate
       gnome-maps
-      seahorse
-      element-desktop
-      zulip
-      discord
-      openvpn
+#      openvpn
     ];
     services.syncthing.enable = true;
-    services.nextcloud-client = {
-      package = pkgs-stable.nextcloud-client;
-      enable = true;
-      startInBackground = true;
-    };
+#    services.nextcloud-client = {
+#      package = pkgs-stable.nextcloud-client;
+#      enable = true;
+#      startInBackground = true;
+#    };
   };
 }

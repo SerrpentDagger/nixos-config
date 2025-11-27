@@ -13,7 +13,6 @@ in {
     # Collection of useful CLI apps
     home.packages = with pkgs; [
       # Command Line
-      killall
       libnotify
       timer
       brightnessctl
@@ -21,7 +20,6 @@ in {
       bat eza fd bottom ripgrep
       rsync
       zip unzip
-      w3m
       pandoc
       hwinfo
       pciutils
@@ -58,7 +56,6 @@ in {
     ];
 
     programs.zsh.shellAliases = {
-      w3m = "w3m -no-cookie -v";
       "," = "comma";
       ",," = "comma-shell";
     };

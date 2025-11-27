@@ -8,7 +8,7 @@ in {
     };
   };
 
-  config = lib.mkIf cfg.enable {
+  config = lib.mkIf false { #TODO review app cfg.enable {
     programs.vscode = {
       enable = true;
       package = pkgs.vscodium;

@@ -9,17 +9,17 @@ in {
     };
   };
 
-  config = lib.mkIf false # TODO configure cfg.enable {
+  config = lib.mkIf cfg.enable {
     programs.obs-studio.enable = true;
     programs.obs-studio.plugins = with pkgs.obs-studio-plugins; [
-      obs-gstreamer
-      obs-vaapi
-      obs-scale-to-sound
+#      obs-gstreamer
+#      obs-vaapi
+#      obs-scale-to-sound
     ];
     home.packages = with pkgs; [
       kdePackages.kdenlive
       tenacity
-      ardour
+#      ardour # digital audio workstation, seems intriguing but currently unnecessary.
     ];
   };
 }

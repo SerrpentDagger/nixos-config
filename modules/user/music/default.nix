@@ -9,7 +9,7 @@ in {
     };
   };
 
-  config = lib.mkIf false # cfg.enable { # TODO read
+  config = lib.mkIf false { # cfg.enable { # TODO read
     home.packages = with pkgs; [
       ardour
       rosegarden

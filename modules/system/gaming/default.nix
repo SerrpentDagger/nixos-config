@@ -11,7 +11,7 @@ in {
   };
 
   config = lib.mkIf cfg.enable {
-    nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [ "steam" "steam-unwrapped" "steam-jupiter-unwrapped" "steamdeck-hw-theme" "xow_dongle-firmware" ];
+    nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [ "steam" "steam-unwrapped" "steam-jupiter-unwrapped" "steamdeck-hw-theme" "xow_dongle-firmware" "discord" ];
     nixpkgs.config.packageOverrides = pkgs: {
       steam = pkgs.steam.override {
         extraPkgs = pkgs: with pkgs; [
@@ -51,6 +51,7 @@ in {
     };
     environment.systemPackages = with pkgs;
       [ steam
+        discord
         gamemode
         prismlauncher
         inotify-tools
@@ -99,13 +100,13 @@ in {
     systemSettings.bluetooth.enable = true;
     hardware.bluetooth = {
       enable = true;
-      powerOnBoot = true;
+      powerOnBoot = false; # Don't want bluetooth always on.
       settings.General = {
-        experimental = true;
+        experimental = true; # Just displays power usage on supported bluetooth
         Privacy = "device";
         JustWorksRepairing = "always";
         Class = "0x000100";
-        FastConnectable = true;
+        FastConnectable = false; # Save power, slower connections
       };
     };
     # FIXME https://github.com/NixOS/nixpkgs/issues/378447

@@ -34,7 +34,6 @@ in {
         cat = "bat";
         htop = "btm";
         fd = "fd -Lu";
-        w3m = "w3m -no-cookie -v";
         "," = "comma";
         ",," = "comma-shell";
       };
@@ -55,7 +54,7 @@ in {
     };
 
     home.packages = with pkgs; [
-      gnugrep gnused w3m
+      gnugrep gnused
       bat eza bottom fd bc
       direnv nix-direnv devenv
     ];

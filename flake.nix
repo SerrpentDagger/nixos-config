@@ -1,5 +1,5 @@
 {
-  description = "Flake of LibrePhoenix";
+  description = "Flake of LibrePhoenix with tweaks by SerpentDagger";
 
   outputs = inputs@{ self, ... }:
     let
@@ -56,7 +56,7 @@
               # host specific config
               { config.networking.hostName = host; }
               (./hosts + "/${host}")
-              (inputs.secrets.hostSecrets.${host})
+       #       (inputs.secrets.hostSecrets.${host})
 
               # my modules
               ./modules/system
@@ -113,11 +113,6 @@
       inputs.home-manager.follows = "home-manager";
     };
 
-    winapps = {
-      url = "github:winapps-org/winapps";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     stylix.url = "github:nix-community/stylix";
 
     emacs-overlay = {
@@ -132,9 +127,9 @@
       flake = false;
     };
 
-    secrets = {
-      url = "git+file:///etc/nixos.secrets";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+#    secrets = {
+#      url = "git+file:///etc/nixos.secrets";
+#      inputs.nixpkgs.follows = "nixpkgs";
+#    };
   };
 }
