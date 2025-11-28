@@ -4,8 +4,8 @@
   config = {
     systemSettings = {
       # users
-      users = [ "USERNAME" ];
-      adminUsers = [ "USERNAME" ];
+      users = [ "serpent" ];
+      adminUsers = [ "serpent" ];
 
       # hardware
       cachy.enable = true;
@@ -48,10 +48,10 @@
       };
     };
 
-    users.users.USERNAME.description = "NAME";
-    home-manager.users.USERNAME.userSettings = {
-      name = "NAME";
-      email = "EMAIL";
+    users.users.serpent.description = "Serpent";
+    home-manager.users.serpent.userSettings = {
+      name = "Serpent";
+      email = "serpent@is-cool.com";
     };
 
     ## EXTRA CONFIG GOES HERE

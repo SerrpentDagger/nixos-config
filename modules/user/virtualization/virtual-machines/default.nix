@@ -9,7 +9,7 @@ in {
     };
   };
 
-  config = lib.mkIf false # TODO review cfg.enable {
+  config = lib.mkIf cfg.enable {
     # Various packages related to virtualization, compatability and sandboxing
     home.packages = with pkgs; [
       # Virtual Machines and wine
@@ -17,8 +17,8 @@ in {
       virt-manager
       qemu
       uefi-run
-      lxc
-      swtpm
+  #    lxc
+  #    swtpm
       bottles
 
       # Filesystems

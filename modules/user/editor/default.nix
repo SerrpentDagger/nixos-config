@@ -6,7 +6,7 @@ let
 in {
   options = {
     userSettings.editor = lib.mkOption {
-      default = "emacs;
+      default = "emacs";
       description = "Default editor";
       type = lib.types.enum [ "emacs" "kate" ]; # removed "vscodium" and "zed" and hardcoded to false below.
       # TODO add more editors

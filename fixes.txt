@@ -1,0 +1,11 @@
+Some fixes I had to perform while modifying and testing:
+
+user/hyprland/hyprprofiles xdg mimeapps defaults for qutebrowser crashes if qute not default.
+This is because defaultApplications is an attribute list, but lib.optionals returns empty list. Commented because I don't use qute.
+
+When using hyprland, you get a crash from missing AQ_somethingorother config.
+This needs to be set in the template copy or commented in hyprland config. See snowfire on original repo. It's supposed to tell hyprland what card to use.
+
+My vm didn't have enough memory (only 8G) to begin with. Crashed silently with a black screen and logout.
+
+My vm didn't give a seperate /boot partition for systemd (it used grub), so I had to copy the grub section from my generated configuration.nix into system configuration.nix and comment out the systemd boot.

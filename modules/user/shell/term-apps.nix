@@ -9,7 +9,7 @@ in {
     };
   };
 
-  config = lib.mkIf false # TODO: configure cfg.enable {
+  config = lib.mkIf cfg.enable {
     # Collection of useful CLI apps
     home.packages = with pkgs; [
       # Command Line

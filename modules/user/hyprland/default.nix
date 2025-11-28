@@ -99,7 +99,7 @@ in
       plugins = [ ];
       settings = {
         env = [
-          "AQ_DRM_DEVICES,${config.home.sessionVariables.AQ_DRM_DEVICES}"
+#          "AQ_DRM_DEVICES,${config.home.sessionVariables.AQ_DRM_DEVICES}" #Set card for hyprland, if available.
           "AW_NO_MODIFIERS,1"
         ];
         exec-once = [

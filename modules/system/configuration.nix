@@ -59,10 +59,15 @@
 
     # Bootloader
     # Use systemd-boot if uefi, default to grub otherwise
-    boot.loader.systemd-boot.enable = true;
-    boot.loader.systemd-boot.editor = false;
-    boot.loader.efi.canTouchEfiVariables = true;
-    boot.loader.efi.efiSysMountPoint = "/boot";
+  #  boot.loader.systemd-boot.enable = true;
+  #  boot.loader.systemd-boot.editor = false;
+  #  boot.loader.efi.canTouchEfiVariables = true;
+  #  boot.loader.efi.efiSysMountPoint = "/boot";
+    
+    # Bootloader. (grub)
+	boot.loader.grub.enable = true;
+	boot.loader.grub.device = "/dev/vda";
+	boot.loader.grub.useOSProber = true;
 
     # Silent Boot
     # https://wiki.archlinux.org/title/Silent_boot
